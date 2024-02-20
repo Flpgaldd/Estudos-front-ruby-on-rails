@@ -1,0 +1,58 @@
+ <h1>Lista de carros</h1>
+ 
+ <% @carros.each do |carro| %>
+    <li>
+        <a href="/carros/<%= carro.id %>">
+          <%= carro.nome %>
+       </a>
+   
+    </li>
+  <% end %>
+  
+  
+  
+  <div>
+  <button> 
+   <a href="/carros/new">Novo Carro</a> 
+  </button>
+
+   </div>
+
+<style>
+   li a{
+   color: #f39e02;
+   text-decoration: none;
+   font-size: 20px;
+   font-family: "Open Sans", monospace;
+   }
+   li a:hover {
+    background-color: yellow;
+  }
+   
+   button  {
+    background-color: #1180e1; /* Cor de fundo verde */ 
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 15px 35px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 25px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+
+  /* Mudança de cor ao passar o mouse */
+  button:hover {
+    background-color: #0065bd;
+  }
+   button a{
+      color: white;
+      text-decoration: none;
+   }
+
+   h1{
+    color: #ffd350;
+    font-family: "Open Sans", monospace;
+
+   }
+  </style>

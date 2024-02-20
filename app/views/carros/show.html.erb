@@ -1,0 +1,43 @@
+<% if notice %>
+  <p><%= notice %></p>
+<% end %>
+
+nome: <b><%= @carro.nome %></b> <br>
+informacao: <b><%= @carro.informacao %></b> <br>
+ano: <b><%= @carro.ano %></b> <br> 
+portas: <b><%= @carro.portas %></b> <br>
+portasmalas: <b><%= @carro.portamalas %></b> <br>
+arcondicionado: <b><%= @carro.arcondicionado %></b> <br>
+lugares: <b><%= @carro.lugares %></b> <br>
+<button> 
+   <a href="/carros">Voltar ao menu principal</a> 
+  </button>
+
+  <style>
+    b{
+     color: orange;
+     font-family:"Open Sans", monospace;
+     font-size: 15px
+    }
+
+      button  {
+    background-color:#1180e1; /* Cor de fundo verde */ 
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 15px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 15px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+
+  /* Mudança de cor ao passar o mouse */
+  button:hover {
+    background-color: #0065bd;
+  }
+   button a{
+      color: white;
+      text-decoration: none;
+   }
+    </style>

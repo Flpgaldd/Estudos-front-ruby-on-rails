@@ -1,0 +1,220 @@
+<% if notice %>
+  <p><%= notice %></p>
+<% end %>
+
+<h1>Novo Carro </h1>
+
+<%= form_with url: url_for(action: 'create' , controller: 'carros'), model: @carro do |form| %>
+  <div>
+    <%= form.label :nome %><br>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    <%= form.label :informacao %><br>
+    <%= form.text_area :informacao %>
+  </div>
+ 
+  <div>
+    <%= form.label :ano %><br>
+    <%= form.text_area :ano %>
+  </div>
+
+  <div>
+    <%= form.label :portas %><br>
+    <%= form.text_area :portas %>
+  </div>
+
+  <div>
+    <%= form.label :portamalas %><br>
+    <%= form.text_area :portamalas %>
+  </div>
+
+  <div>
+    <%= form.label :arcondicionado %><br>
+    <%= form.text_area :arcondicionado %>
+  </div>
+
+<div>
+    <%= form.label :lugares %><br>
+    <%= form.text_area :lugares %>
+  </div>
+  <div>
+<%= form.select :fabricante_id, options_for_select(@fabricantes.map { |fabricante| [fabricante.nome, fabricante.id] }) %>
+  </div>
+  <div>
+    <%= form.submit "Salvar", id: "submit-button" %>
+  </div>
+
+ <div>
+  <button> 
+   <a href="/carros">Voltar ao menu principal</a> 
+  </button> 
+  </div>   
+<% end %>
+
+<style>
+  /* Estilos para o botão */
+  button  {
+    background-color: #1180e1; /* Cor de fundo verde */ 
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+
+  /* Mudança de cor ao passar o mouse */
+  button:hover {
+    background-color: #0065bd;
+  }
+
+  /* Estilos para o link dentro do botão */
+  button a {
+    color: white; /* Cor do texto branca */
+    text-decoration: none; /* Sem decoração de texto */
+  }
+
+  #submit-button {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+  #submit-button:hover {
+    background-color: #45a049 ;
+  }
+  #nome {
+    background-color: #cadae7; /* Cor de fundo verde */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+  #nome:hover {
+    background-color: #76a4c9;
+}
+  #informacao {
+    background-color: #cadae7; /* Cor de fundo verde */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+  #informacao:hover {
+    background-color: #76a4c9;
+
+  }
+  #ano {
+    background-color: #cadae7; /* Cor de fundo verde */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+  #ano:hover {
+    background-color: #76a4c9;
+  }
+
+  #portas {
+    background-color: #cadae7; /* Cor de fundo verde */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+  #portas:hover {
+    background-color: #76a4c9;
+  }
+   #portamalas {
+    background-color: #cadae7; /* Cor de fundo verde */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+  #portamalas:hover {
+    background-color: #76a4c9;
+  }
+   #arcondicionado {
+    background-color: #cadae7; /* Cor de fundo verde */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+  #arcondicionado:hover {
+    background-color: #76a4c9;
+  }
+   #lugares {
+    background-color: #cadae7; /* Cor de fundo verde */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+  #lugares:hover {
+    background-color: #76a4c9;
+  }
+  label{
+    color: #0141ff;
+    font-size: 20px;
+    font-family: "Open Sans", monospace;
+  }
+  h1{
+    color: #ffd350;
+    font-size: 40px;
+    font-family: "Open Sans", monospace;
+  }
+   #fabricante_id {
+    background-color: #014f8f; /* Cor de fundo verde */
+    border: none; /* Sem borda */
+    color: yellow; /* Cor do texto branca */
+    padding: 10px 20px; /* Preenchimento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em bloco inline */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 10px; /* Margem ao redor do botão */
+  }
+  #fabricante_id:hover {
+    background-color: #007ce1;
+  }
+  
+</style>
